@@ -1,0 +1,21 @@
+TABEL utilizator
+
+CREATE TABLE `disertatie`.`utilizator` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `utilizator` VARCHAR(255) NOT NULL,
+  `parola` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `poza` LONGBLOB NOT NULL,
+  `status` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`id`));
+
+TABEL email
+
+CREATE TABLE `disertatie`.`email` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(50) NOT NULL,
+  `subiect` VARCHAR(100) NOT NULL,
+  `mesaj` VARCHAR(255) NOT NULL,
+  `data` DATE NOT NULL,
+  PRIMARY KEY (`id`));
+  

@@ -1,4 +1,5 @@
 import uiRouter from 'angular-ui-router';
+import restangular from 'restangular';
 
 // UI-VIEW CONTROLLER
 import controllerPrincipal from './controller/controllerPrincipal.js';
@@ -10,7 +11,18 @@ import intrebariController from './controller/intrebariController.js';
 import videoController from './controller/videoController.js';
 import chestionareController from './controller/chestionareController.js';
 
-export default angular.module('modulParticular', ['ui.router'])
+import creareContModalController from './controller/creareContModalController.js';
+import autentificareContModalController from './controller/autentificareContModalController.js';
+import controllerEmail from './controller/controllerEmail.js';
+import controllerProfil from './controller/controllerProfil.js';
+
+// SERVICE
+import serviceCreareContNou from './service/serviceCreareContNou.js';
+import serviceAutentificare from './service/serviceAutentificare.js';
+import serviceMail from './service/serviceMail.js';
+import profilService from './service/profilService.js';
+
+export default angular.module('modulParticular', ['ui.router','ngMessages','restangular','xeditable', 'flow'])
 .controller('controllerPrincipal', controllerPrincipal)
 .controller('acasaController', acasaController)
 .controller('legislatieController', legislatieController)
@@ -20,7 +32,18 @@ export default angular.module('modulParticular', ['ui.router'])
 .controller('videoController', videoController)
 .controller('chestionareController', chestionareController)
 
-.config(['$qProvider','$urlRouterProvider','$stateProvider',function($qProvider, $urlRouterProvider,$stateProvider) {
+.controller('creareContModalController', creareContModalController)
+.controller('autentificareContModalController', autentificareContModalController)
+.controller('controllerEmail', controllerEmail)
+.controller('controllerProfil', controllerProfil)
+
+.service('serviceCreareContNou', serviceCreareContNou)
+.service('serviceAutentificare', serviceAutentificare)
+.service('serviceMail', serviceMail)
+.service('profilService', profilService)
+
+.config(['$qProvider','$urlRouterProvider','$stateProvider', 'RestangularProvider', function($qProvider, $urlRouterProvider,$stateProvider, RestangularProvider) {
+	RestangularProvider.setBaseUrl('http://localhost/PROIECT/BackEnd');
 	$qProvider.errorOnUnhandledRejections(false);
 	$urlRouterProvider.otherwise('/acasa');
 	$stateProvider
@@ -59,4 +82,7 @@ export default angular.module('modulParticular', ['ui.router'])
 		templateUrl: '../fisiere/aplicatie/module/pagini/chestionare.htm',
 		controller:'chestionareController'
 	});
-}]);
+}])
+.run(function(editableOptions) {
+  editableOptions.theme = 'bs3'; 
+});

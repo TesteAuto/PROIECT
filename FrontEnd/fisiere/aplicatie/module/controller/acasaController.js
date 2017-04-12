@@ -1,6 +1,6 @@
 class acasaController {
 	constructor($scope){
-
+		
 	}
 }
 acasaController.$inject = ['$scope'];
