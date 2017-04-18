@@ -1,0 +1,15 @@
+.panel-group {
+	margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+.container.intrebari{
+	width: 70%;
+}
+.textLegendaIntrebare{
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:20px;
+  font-size:28px;
+  color: #222;
+}

@@ -72,6 +72,30 @@ class Principal {
      echo $e->getMessage();
    }
  }
+ // Video
+ public static function getVideo($app, $db){
+    try {
+
+      $row = $db->getMetodaVideo();
+      $json = Principal::raspuns((object)$row);
+      $app->response()->header('Content-Type', 'application/json');
+      echo $json;
+    } catch(Exception $e) {
+     echo $e->getMessage();
+   }
+ }
+  // Intrebari
+ public static function getIntrebari($app, $db){
+    try {
+
+      $row = $db->getMetodaIntrebari();
+      $json = Principal::raspuns((object)$row);
+      $app->response()->header('Content-Type', 'application/json');
+      echo $json;
+    } catch(Exception $e) {
+     echo $e->getMessage();
+   }
+ }
 private static function raspuns($response)
 {
   if(is_array($response)) {

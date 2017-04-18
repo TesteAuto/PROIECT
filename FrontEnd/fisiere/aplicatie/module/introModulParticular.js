@@ -1,5 +1,7 @@
 import uiRouter from 'angular-ui-router';
 import restangular from 'restangular';
+import angularAnimate from 'angular-animate';
+import angularSanitize from 'angular-sanitize';
 
 // UI-VIEW CONTROLLER
 import controllerPrincipal from './controller/controllerPrincipal.js';
@@ -21,8 +23,10 @@ import serviceCreareContNou from './service/serviceCreareContNou.js';
 import serviceAutentificare from './service/serviceAutentificare.js';
 import serviceMail from './service/serviceMail.js';
 import profilService from './service/profilService.js';
+import serviceVideo from './service/serviceVideo.js';
+import serviceIntrebari from './service/serviceIntrebari.js';
 
-export default angular.module('modulParticular', ['ui.router','ngMessages','restangular','xeditable', 'flow'])
+export default angular.module('modulParticular', ['ui.router','ngMessages','restangular','xeditable', 'flow', 'ui.bootstrap', 'ngAnimate', 'ngSanitize'])
 .controller('controllerPrincipal', controllerPrincipal)
 .controller('acasaController', acasaController)
 .controller('legislatieController', legislatieController)
@@ -41,6 +45,8 @@ export default angular.module('modulParticular', ['ui.router','ngMessages','rest
 .service('serviceAutentificare', serviceAutentificare)
 .service('serviceMail', serviceMail)
 .service('profilService', profilService)
+.service('serviceVideo', serviceVideo)
+.service('serviceIntrebari', serviceIntrebari)
 
 .config(['$qProvider','$urlRouterProvider','$stateProvider', 'RestangularProvider', function($qProvider, $urlRouterProvider,$stateProvider, RestangularProvider) {
 	RestangularProvider.setBaseUrl('http://localhost/PROIECT/BackEnd');

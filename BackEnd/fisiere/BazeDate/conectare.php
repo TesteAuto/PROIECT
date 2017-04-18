@@ -151,5 +151,21 @@ abstract class Conectare{
    throw $rbe;
  }
 }
+// Video
+ public function getMetodaVideo() {
+    try {
+      return R::getAll("SELECT * FROM $this->tabel");
+    } catch (\RedBeanPHP\RedException $rbe) {
+      throw $rbe;
+    }
+  }
+// Intrebari
+ public function getMetodaIntrebari() {
+    try {
+      return R::getAll("SELECT * FROM $this->tabel");
+    } catch (\RedBeanPHP\RedException $rbe) {
+      throw $rbe;
+    }
+  }
 }
 ?>

@@ -11,11 +11,15 @@
   <link href="../node_modules/sweetalert/dist/sweetalert.css" rel="stylesheet">
   <!-- Xeditable CSS -->
   <link href="../node_modules/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+  <!-- UI Bootstrap CSS -->
+  <link href="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
   <link href="../fisiere/aplicatie/module/style/reset.css" rel="stylesheet">
   <link href="../fisiere/aplicatie/module/style/index.css" rel="stylesheet">
   <link href="../fisiere/aplicatie/module/style/creareContModal.css" rel="stylesheet">
   <link href="../fisiere/aplicatie/module/style/profil.css" rel="stylesheet">
   <link href="../fisiere/aplicatie/module/style/trimiteMesaj.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/video.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/intrebari.css" rel="stylesheet">
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <link rel="icon" type="image/png" href="">
   <!--[if lt IE 9]>
@@ -48,7 +52,9 @@
         <ul class="nav navbar-nav navbar-right">
           <!-- Creare Cont Nou -->
           <li><a ng-if="!autentificareJWT" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-user"></span><span data-toggle="modal" data-target="#creareContModal"> Creare cont</span></a></li>
+          <!-- Autentificare Cont-->
           <li><a ng-if="!autentificareJWT" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-log-in"></span><span data-toggle="modal" data-target="#autentificareCont"> Autentificare</span></a></li>
+          <!-- Profil Modal-->
           <li class="hidden-xs"><a ng-if = "autentificareJWT" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-globe"></span><span data-toggle="modal" data-target="#profilModal"> Profilul meu</span></a></li>
           <li><a ng-if = "autentificareJWT" data-toggle="collapse" data-target="#hamburger" ng-click="dezautentificare()"><span class="glyphicon glyphicon-off"></span> Dezautentificare</a></li>
         </ul>
@@ -176,6 +182,9 @@
   <script src="../node_modules/angular-xeditable/dist/js/xeditable.js"></script>
   <!-- PENTRU UPLOAD IMAGINE-->
   <script src="../node_modules/ng-flow/dist/ng-flow-standalone.min.js"></script>
+  <!-- PENTRU ACCORDION-->
+  <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
   <!-- Fisiere concatenate -->
   <script src="continut.js"></script>
 </body>

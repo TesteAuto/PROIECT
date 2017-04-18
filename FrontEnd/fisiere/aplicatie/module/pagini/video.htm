@@ -1,1 +1,10 @@
-<div>Pagina Video</div>
+<div class="container">
+	<div class="row">
+	    <div class="col-sm-12 col-md-6 text-center" ng-repeat="url in urls">
+	    	<video autobuffer controls>
+	    		<source id="mp4" ng-src="{{url}}" type="video/mp4">
+	    		<source id="mp4" src="https://www.dropbox.com/home/video?preview=video1.mp4" type="video/mp4">
+	    	</video>
+	    </div>
+	</div>
+</div>

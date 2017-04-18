@@ -1,1 +1,15 @@
-<div>Pagina Intrebari</div>
+<!-- INTREBARI & RASPUNSURI -->
+<div class="container intrebari">
+<legend class="textLegendaIntrebare">Întrebări frecvente şi răspunsuri</legend>
+	<button type="button" class="btn btn-primary" ng-click="deschideTot()">Deschide tot</button>
+	<button type="button" class="btn btn-primary" ng-click="inchideTot()">Închide tot</button>
+	<uib-accordion close-others="false">
+	<div uib-accordion-group class="panel-default" is-open="i.deschideInchide" heading="{{i.intrebare}}" ng-repeat="i in intrebareRaspuns">
+			{{i.raspuns}}
+		</div>
+	</uib-accordion>
+	<div class="pull-right">
+		<button type="button" class="btn btn-primary" ng-click="deschideTot()">Deschide tot</button>
+		<button type="button" class="btn btn-primary" ng-click="inchideTot()">Închide tot</button>
+	</div>
+</div>
